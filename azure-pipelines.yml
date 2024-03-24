@@ -1,0 +1,15 @@
+trigger:
+  branches:
+    include:
+      - master  # Update with your branch name
+
+pool:
+  vmImage: 'ubuntu-latest'  # Update with your VM OS
+
+steps:
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: ‘test'
+    sourceFolder: '.'
+    targetFolder: ' /home/deep/'
+    readyTimeout: '20000'
